@@ -22,7 +22,7 @@ pod 'iGBTPullView'
 
 ## Author
 
-long-vu-tiki, long.vu@tiki.vn
+vvlong90@gmail.com
 
 ## License
 
