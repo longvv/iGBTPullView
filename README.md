@@ -1,29 +1,79 @@
+
 # iGBTPullView
 
-[![CI Status](https://img.shields.io/travis/long-vu-tiki/iGBTPullView.svg?style=flat)](https://travis-ci.org/long-vu-tiki/iGBTPullView)
-[![Version](https://img.shields.io/cocoapods/v/iGBTPullView.svg?style=flat)](https://cocoapods.org/pods/iGBTPullView)
-[![License](https://img.shields.io/cocoapods/l/iGBTPullView.svg?style=flat)](https://cocoapods.org/pods/iGBTPullView)
-[![Platform](https://img.shields.io/cocoapods/p/iGBTPullView.svg?style=flat)](https://cocoapods.org/pods/iGBTPullView)
+`iGBTPullView` is a customizable pull-to-refresh and pull-to-load more library for iOS applications.
 
-## Example
+## Features
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
+- Pull-to-refresh
+- Pull-to-load more
+- Easy customization
+- Support for different modes
 
 ## Installation
 
-iGBTPullView is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+### CocoaPods
+
+To integrate `iGBTPullView` into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 pod 'iGBTPullView'
 ```
 
-## Author
+Then, run the following command:
 
-vvlong90@gmail.com
+```bash
+pod install
+```
+
+## Usage
+
+### Initialization
+
+To use `iGBTPullView`, import the library and initialize it in your view controller:
+
+```swift
+import iGBTPullView
+
+class ViewController: UIViewController {
+    var pullView: iGBTPullView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupPullView()
+    }
+
+    func setupPullView() {
+        pullView = iGBTPullView()
+        pullView.delegate = self
+        self.view.addSubview(pullView)
+    }
+}
+```
+
+### Customization
+
+You can customize various aspects of the pull view, such as its colors, fonts, and animations, by modifying the properties in `iGBTPullViewConstants` and `iGBTPullViewElements`.
+
+### Modes
+
+`iGBTPullView` supports different modes for pull-to-refresh and pull-to-load more. You can switch between these modes by setting the appropriate properties in `iGBTPullViewMode`.
+
+## Example Project
+
+The `Example` directory contains a sample project demonstrating how to integrate and use `iGBTPullView` in an iOS application.
+
+### Main Files
+
+- **AppDelegate.swift**: Manages the application lifecycle.
+- **ViewController.swift**: Demonstrates the use of `iGBTPullView`.
+- **Main.storyboard**: The UI layout for the example project.
+- **LaunchScreen.xib**: The launch screen layout.
+
+## Testing
+
+The `Example/Tests` directory contains unit tests for the example application.
 
 ## License
 
-iGBTPullView is available under the MIT license. See the LICENSE file for more info.
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
